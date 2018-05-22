@@ -1,0 +1,29 @@
+<div>
+  <h2 class="text-success">Users</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Username</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Location</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% if constituents %}
+        {% for person in constituents %}
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ person.username }}</td>
+        <td>{{ person.get_first_name }}</td>
+        <td>{{ person.get_last_name }}</td>
+        <td>{{ person.city }}</td>
+      </tr>
+        {% endfor %}
+    {% else %}
+        <h2> No constituents have registered for the site.  </h2>
+    {% endif %}
+    </tbody>
+  </table>
+</div>
